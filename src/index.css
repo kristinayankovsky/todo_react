@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 body {
     min-height: 100vh;
     display: flex;
@@ -24,7 +23,18 @@ body {
     text-align: center;
 }
 
-h1, h2, h3 {
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+h1 {
     font-family: Arial, sans-serif;
     color:#333;
     margin-bottom: 20px;
@@ -39,7 +49,7 @@ section {
     border-radius: 8px;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"] {
     width: 100%;
     padding: 10px 12px;
     margin: 8px 0 15px 0;
@@ -76,12 +86,6 @@ button:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-
-#todoList li span.completed {
-    text-decoration: line-through;
-    color: #999;
 }
 
 form {

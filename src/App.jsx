@@ -4,45 +4,25 @@ import TodoForm from "./components/TodoForm"
 import TodoList from "./components/TodoList"
 
 function App() {
-
   const [todos, setTodos] = useState([])
 
-  function addTodo(text) {
-
-    const newTodo = {
-      id: Date.now(),
-      text: text
-    }
-
+  const addTodo = (text) => {
+    if (!text.trim()) return
+    const newTodo = { id: Date.now(), text }
     setTodos([...todos, newTodo])
-
   }
 
-  function deleteTodo(id) {
-
-    setTodos(
-      todos.filter(todo => todo.id !== id)
-    )
-
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id))
   }
 
   return (
-
     <div className="container">
-
       <Header />
-
       <TodoForm addTodo={addTodo} />
-
-      <TodoList
-        todos={todos}
-        deleteTodo={deleteTodo}
-      />
-
+      <TodoList todos={todos} deleteTodo={deleteTodo} />
     </div>
-
   )
-
 }
 
 export default App
